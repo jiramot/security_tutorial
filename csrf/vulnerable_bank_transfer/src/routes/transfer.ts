@@ -12,7 +12,6 @@ router.get('/success', (req, res, next) => {
 
 router.post('/', async (req, res, next) => {
     const username = req.cookies.username
-
     if (username != null) {
         const account = req.body.account
         const amount = req.body.amount

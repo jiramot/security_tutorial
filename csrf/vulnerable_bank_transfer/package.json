@@ -1,5 +1,5 @@
 {
-  "name": "bank transfer",
+  "name": "vulnerable bank transfer",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,16 +8,8 @@
     "serve": "node lib/app.js",
     "start": "ts-node-dev --watch public,views --respawn src/app.ts"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/jiramot/express-oauth2-sso-web.git"
-  },
-  "author": "",
+  "author": "Watchanon Numnam",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/jiramot/express-oauth2-sso-web/issues"
-  },
-  "homepage": "https://github.com/jiramot/express-oauth2-sso-web#readme",
   "dependencies": {
     "@types/cookie-parser": "^1.4.2",
     "@types/csurf": "^1.9.36",
