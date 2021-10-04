@@ -1,0 +1,33 @@
+@startuml
+hide footbox
+actor  "Attacker" as attacker
+actor  "Victim" as user
+participant "Bank.com" as bank
+
+autonumber 1.1
+user -> bank: Login
+bank --> user: session-session
+... user-session **created!!** and still **valid!!** until expired ...
+autonumber stop
+== Attack ==
+user -> attacker: Visit attacker website, email or ...\n\
+then trigger the attacker script
+note left
+<body onload="document.forms[0].submit()">
+    <form action="http://bank.com/transfer.do" method="POST">
+
+    <input type="hidden" name="acct" value="MARIA"/>
+    <input type="hidden" name="amount" value="100000"/>
+    <input type="submit" value="View my pictures"/>
+    </form>
+<form...
+end note
+autonumber 3.1
+attacker -> bank: Post transfer money to **account** and **amount**
+bank -> bank: Valid **user-session** then transfer to \n\
+user-input **account** and user-input **amount**
+note left
+money transfer to attacker
+end note
+... user-session still **valid!!** until expired ...
+@enduml

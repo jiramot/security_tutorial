@@ -1,0 +1,21 @@
+@startuml
+hide footbox
+actor  "User" as user
+participant "Bank" as bank
+
+autonumber 1.1
+user -> bank: Login
+bank --> user: session-session
+... user-session created ...
+autonumber 2.1
+user -> bank: Request transfer money
+bank -> bank:
+bank --> user: Transfer money form
+... waiting until user input transfer money form ...
+autonumber 3.1
+user -> bank: Post transfer money to **account** and **amount**
+bank -> bank: Check **user-session** then transfer to \n\
+user-input **account** and user-input **amount**
+bank-->user: Transfer result
+... session still valid until expired...
+@enduml
